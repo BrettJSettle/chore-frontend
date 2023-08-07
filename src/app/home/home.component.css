@@ -1,0 +1,20 @@
+.results {
+  display: grid;
+  column-gap: 10px;
+  row-gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 350px));
+  margin-top: 20px;
+  justify-content: space-around;
+}
+
+@media (min-width: 300px) and (max-width: 768px) {
+  .results {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 499px) {
+  .results {
+      grid-template-columns: 1fr;
+  }    
+}

@@ -1,0 +1,16 @@
+<main>
+    <mat-toolbar color="primary">
+        <button mat-icon-button [routerLink]="['/']" aria-label="Chores Home">
+            <mat-icon>home</mat-icon>
+        </button>
+        <span>Avalon Chores</span>
+        <span class="example-spacer"></span>
+        <button mat-icon-button class="example-icon history-icon" aria-label="History"
+            [routerLink]="['/chores/all']">
+            <mat-icon>history</mat-icon>
+        </button>
+    </mat-toolbar>
+    <section class="content">
+        <router-outlet></router-outlet>
+    </section>
+</main>

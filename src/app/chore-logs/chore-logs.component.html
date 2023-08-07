@@ -1,0 +1,22 @@
+<ng-template [ngIf]="this.chore">
+    <div>
+        <h1>{{ this.chore.name }}</h1>
+        <p>{{ this.chore.description }}</p>
+    </div>
+</ng-template>
+<table>
+    <thead>
+        <th>Chore</th>
+        <th>User ID</th>
+        <th>Completion Date</th>
+    </thead>
+    <tbody>
+        <ng-container *ngFor="let log of choreLogs">
+            <tr>
+                <td>{{ log.chore.name }}</td>
+                <td>{{ log.user.name }}</td>
+                <td>{{ log.completion_date }}</td>
+            </tr>
+        </ng-container>
+    </tbody>
+</table>

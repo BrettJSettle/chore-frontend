@@ -1,0 +1,42 @@
+<mat-card class="chore-card">
+    <mat-card-header>
+        <mat-card-title-group>
+            <mat-card-title>
+                {{ chore.name }}
+            </mat-card-title>
+            <mat-card-subtitle>{{ chore.description }}</mat-card-subtitle>
+            <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Menu" class="chore-menu">
+                <mat-icon>menu</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item [routerLink]="['/chores', chore.id]">
+                    <mat-icon>history</mat-icon>
+                    <span>History</span>
+                </button>
+                <button mat-menu-item (click)="skip()">
+                    <mat-icon>skip_next</mat-icon>
+                    <span>Skip</span>
+                </button>
+            </mat-menu>
+        </mat-card-title-group>
+    </mat-card-header>
+    <!-- Content with user dropdown and complete button -->
+    <mat-card-content>
+        <form class="input-group" [formGroup]="choreForm" (ngSubmit)="logChore()">
+            <input type="hidden" formControlName="chore_id" [value]="chore.id" />
+            <mat-form-field class="chore-assignee-select" >
+                <mat-label>Assignee</mat-label>
+                <mat-select formControlName="user_id">
+                    <mat-option *ngFor="let user of users" [value]="user.id">
+                        {{user.name}}
+                    </mat-option>
+                </mat-select>
+                <mat-hint class="chore-hint">{{ getHint() }}</mat-hint>
+            </mat-form-field>
+            <button mat-fab color="primary" aria-label="Complete" class="chore-complete-button" type="submit">
+                <mat-icon>check</mat-icon>
+            </button>
+        </form>
+    </mat-card-content>
+
+</mat-card>

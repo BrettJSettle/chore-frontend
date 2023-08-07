@@ -1,0 +1,11 @@
+:host {
+  --content-padding: 10px;
+}
+
+.content {
+  padding: var(--content-padding);
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
