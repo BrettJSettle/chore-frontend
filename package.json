@@ -1,7 +1,7 @@
 {
-  "name": "angular.io-example",
+  "name": "chores_project",
   "version": "0.0.0",
-  "description": "Example project from an angular.io guide.",
+  "description": "Simple app for tracking chores in the house.",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^16.1.0-rc.0",
-    "@angular/cli": "^16.1.0-rc.0",
+    "@angular/cli": "^16.1.8",
     "@angular/compiler-cli": "^16.1.0-rc.0",
     "@types/jasmine": "~4.3.0",
     "@types/node": "^16.11.35",

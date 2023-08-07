@@ -12,8 +12,7 @@ export class ChoresService {
   constructor(
     private http: HttpClient) { }
 
-  // url = 'http://localhost:5000/api';
-  url = 'http://192.168.1.167:5000/api';
+  url = 'http://192.168.1.165:5000/api';
 
   async getAllChores(): Promise<Chore[]> {
     const data = await fetch(`${this.url}/chores`);
